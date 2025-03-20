@@ -1,0 +1,4 @@
+Flask
+pandas
+numpy
+opencv-python-headless

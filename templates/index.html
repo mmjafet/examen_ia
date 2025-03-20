@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de MRI Cerebral</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px 0;
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container {
+            flex: 1 1 300px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .image-container h2 {
+            background-color: #3f51b5;
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .button-container {
+            margin: 20px;
+        }
+        button {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Detección de Tumores</h1>
+    </header>
+    <div class="container">
+        <div class="image-container">
+            <h2>Imagen MRI</h2>
+            <img src="data:image/png;base64,{{ mri_image }}" alt="Imagen MRI">
+        </div>
+        <div class="image-container">
+            <h2>Máscara</h2>
+            <img src="data:image/png;base64,{{ mask_image }}" alt="Máscara">
+        </div>
+        <div class="image-container">
+            <h2>MRI y Máscara</h2>
+            <img src="data:image/png;base64,{{ combined_image }}" alt="Imagen Combinada">
+        </div>
+        <div class="button-container">
+            <button onclick="window.location.reload();">Mostrar imagen</button>
+        </div>
+    </div>
+</body>
+</html>
