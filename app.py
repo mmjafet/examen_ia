@@ -5,6 +5,7 @@ import random
 import base64
 from flask import Flask, render_template
 import os
+print (os.getcwd())
 
 # Inicializar Flask y Talisman para la política de seguridad
 app = Flask(__name__)
