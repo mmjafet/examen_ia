@@ -6,65 +6,49 @@
     <title>Visualización de MRI Cerebral</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #3f51b5;
+        h1 {
+            background-color: #4CAF50;
             color: white;
             padding: 20px 0;
             margin: 0;
         }
         .container {
             padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
         .image-container {
-            flex: 1 1 300px;
+            display: inline-block;
             margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
-        .image-container h2 {
-            background-color: #3f51b5;
-            color: white;
-            margin: 0;
-            padding: 10px;
-        }
-        .image-container img {
-            width: 100%;
+        img {
+            max-width: 100%;
             height: auto;
-            display: block;
-        }
-        .button-container {
-            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: white;
         }
         button {
-            background-color: #3f51b5;
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #303f9f;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Detección de Tumores</h1>
-    </header>
+    <h1>Deteccion de tumores</h1>
     <div class="container">
         <div class="image-container">
             <h2>Imagen MRI</h2>
@@ -75,10 +59,10 @@
             <img src="data:image/png;base64,{{ mask_image }}" alt="Máscara">
         </div>
         <div class="image-container">
-            <h2>MRI y Máscara</h2>
+            <h2>MRI y Mascara</h2>
             <img src="data:image/png;base64,{{ combined_image }}" alt="Imagen Combinada">
         </div>
-        <div class="button-container">
+        <div>
             <button onclick="window.location.reload();">Mostrar imagen</button>
         </div>
     </div>
